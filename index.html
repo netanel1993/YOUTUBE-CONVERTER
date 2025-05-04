@@ -112,7 +112,8 @@
         return;
       }
 
-      let redirectUrl = "https://www.y2mate.is/youtube/" + encodeURIComponent(url);
+      const quality = document.getElementById("quality").value;
+      let redirectUrl = "http://localhost:3000/download?url=" + encodeURIComponent(url) + "&format=" + format + "&quality=" + quality;
       window.open(redirectUrl, "_blank");
     }
 
@@ -122,15 +123,13 @@
 <body>
   <h1>🎵 YouTube to MP3 / MP4 Converter</h1>
   <p class="description">
-    Welcome to our fast and simple conversion tool! Just paste a YouTube link, choose your format (MP3 or MP4), and click convert.
-    <br><br>
+    Welcome to our fast and simple conversion tool! Just paste a YouTube link, choose your format (MP3 or MP4), and click convert.<br><br>
     <strong>Why use our tool?</strong><br>
     ✅ 100% free and secure<br>
     ✅ No ads, no registration<br>
     ✅ Works on mobile and desktop<br>
     ✅ Lightning-fast conversions<br>
-    ✅ Choose video quality: 480p, 720p, or 1080p<br>
-    <br>
+    ✅ Choose video quality: 480p, 720p, or 1080p<br><br>
     Whether you're downloading music for offline listening or saving a video for later, our tool is built for speed and ease.
   </p>
   <form onsubmit="redirectToConvert(event)">
